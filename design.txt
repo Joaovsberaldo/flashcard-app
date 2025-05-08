@@ -1,0 +1,35 @@
+Objetivo: Desenvolver uma aplicação de flashcard empoderada com IA generativa
+para memorizar respostas curtas e traduções.
+
+Aplicação de IA
+- Interface: Intermediário entre usuário e a lógica
+- Lógica: Executar as funções que cria o card e revisa o card
+- LLM: Gerar respostas na criação e revisão do card
+- Dados: Persistir os dados em bancos de dados - Cards
+
+Usuário > Interface > Lógica > LLM
+        <           <        <
+
+Flashcard
+- Tradução
+- QA fechadas
+
+
+1ª Fase: Criar card
+
+Entrada: Escrever a pergunta/texto origem
+Saída: 
+- Geração automatizada da resposta/tradução
+- Salvar respostas
+
+
+2ª Fase: Revisar card
+
+Entrada: Pedir revisão
+Saída: 
+- Exibir pergunta/texto de origem
+
+Entrada: Enviar a resposta/selecionar
+Saída: 
+- Enviar revisão da resposta: Verdadeiro/falso e explicação
+- Programar intervalos espaçados
