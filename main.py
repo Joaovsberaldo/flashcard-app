@@ -161,4 +161,10 @@ class FlashcardApp:
                 time.sleep(0.05)
                 
 
+# def main():
+#     print("Hello from flashcard-app!")
 
+# if __name__ == "__main__":
+#     main()
+#     create_card
+#     review_card
