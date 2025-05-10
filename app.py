@@ -1,39 +1,50 @@
-# 3 buttons: send the input, save the card and check the card
-
-# 2 forms: input, output
-
-# 2 screens: create card and check card 
-
 import streamlit as st
-from main import create_card, check_card
+from main import DataStore, FlashcardApp
 import random
 
+DATA_FILE = "data.json"
 st.title("Flashcard App")
 
-if "cards" not in st.session_state:
-    st.session_state.cards = []
-
-choice = st.sidebar.selectbox("Menu", ["Criar card", "Checar card"])
-
-if choice == "Criar card":
+def init_session():
+    st.session_state.setdefault("cards", [])
+    datastore = DataStore(filename=DATA_FILE)
+    state = datastore.load()
+    if not state.get("cards"):
+        datastore.create_file()
+    else:
+        st.session_state.cards = state["cards"]
+        
+def show_create_card():
     user_input = st.text_input("Texto original")
     if st.button("Traduzir"):
-        cards = create_card(user_input)  # retorna lista com 1 card
+        card = FlashcardApp.create_card(user_input)  # retorna card
         # Exibir o resultado na tela
-        st.write(cards[-1]["output"])
-        st.session_state.cards += cards
-       
-        
-else:
+        st.write(card["output"])
+        st.session_state.cards.append(card)
+
+
+def show_review_card():
     if not st.session_state.cards:
-        st.warning("Crie pelo menos um card!")
+        st.write("Nenhum card criado ainda.")
+        return
+    card = random.choice(st.session_state.cards)
+    st.write("Texto:")
+    st.write(card["input"])
+    user_output = st.text_input("Escreva a resposta")
+    if st.button("Revisar"):            
+        st.write("Resposta correta:", card["output"])
+        app = FlashcardApp()
+        feedback = app.review_card(card=card, user_output=user_output)
+        st.write_stream(feedback)
+
+
+def main():
+    init_session()
+    choice = st.sidebar.selectbox("Menu", ["Criar card", "Revisar card"])
+    if choice == "Criar card":
+        show_create_card()
     else:
-        card = random.choice(st.session_state.cards)
-        st.write("Texto:")
-        st.write(card["input"])
-        ans = st.text_input("Escreva a resposta")
-        if st.button("Checar"):
-            # você precisaria adaptar check_card para retornar resultado em vez de print
-            st.write("Resposta correta:", card["output"])
-            feedback = check_card(card, ans)
-            st.write_stream(feedback)
+        show_review_card()
+        
+if __name__ == "__main__":
+    main()
