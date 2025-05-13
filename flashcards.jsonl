@@ -1,0 +1,15 @@
+{"front": "Olá", "back": "Hello"}
+{"front": "Obrigado", "back": "Thank you"}
+{"front": "Água", "back": "Water"}
+{"front": "Amigo", "back": "Friend"}
+{"front": "Livro", "back": "Book"}
+{"front": "Escola", "back": "School"}
+{"front": "Feliz", "back": "Happy"}
+{"front": "Casa", "back": "Home/House"}
+{"front": "Comida", "back": "Food"}
+{"front": "Sol", "back": "Sun"}
+{"front": "How well do you understand the use of classes in Python?", "back": "Classes are one of the most important concepts in Python. They allow me to create objects that have specific properties and behaviors. For example, if I want to create a dog object in Python, I can use the class Dog to create an instance of the Dog object. This instance has all of the properties and behaviors of a real dog, but it’s created within the Python environment."}
+{"front": "Are you familiar with the use of the Git version control system?", "back": "Yes, I am very familiar with the use of the Git version control system. I have been using Git for the past five years and have developed a strong understanding of its capabilities. I am confident in my ability to use Git for version control, branching, merging, and commit management."}
+{"front": "Describe your experience with debugging Python code.", "back": "I have extensive experience with debugging Python code. I have been working with Python for over five years now, and during that time I have learned many different ways to debug Python code."}
+{"front": "What is the difference between a set and a list in Python?", "back": "Sets are unordered collections of unique elements, while lists are ordered collections of elements that can be accessed by index. Sets are useful for mathematical operations because they don’t have any duplicates, while lists are better for storing data."}
+{"front": "We want to encourage our Python developers to share their ideas and improvements to the codebase. How would you go about doing this?", "back": "I believe that it’s important for developers to share their ideas and improvements to the codebase because it helps improve the quality of the project. I have been in situations where I have had an idea for improving the code, but didn’t share it because I didn’t think anyone would listen. However, I learned that if you don’t speak up, no one will know about your idea."}
