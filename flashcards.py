@@ -11,18 +11,7 @@ def read_jsonl(file_path: str):
 
 # ---------- Inicialização ----------
 if "cards" not in st.session_state:
-    st.session_state.cards = [
-        {"front": "Olá", "back": "Hello"},
-        {"front": "Obrigado", "back": "Thank you"},
-        {"front": "Água", "back": "Water"},
-        {"front": "Amigo", "back": "Friend"},
-        {"front": "Livro", "back": "Book"},
-        {"front": "Escola", "back": "School"},
-        {"front": "Feliz", "back": "Happy"},
-        {"front": "Casa", "back": "Home/House"},
-        {"front": "Comida", "back": "Food"},
-        {"front": "Sol", "back": "Sun"},
-    ]
+    st.session_state.cards = []
     data = read_jsonl("flashcards.jsonl")
     st.session_state.cards.extend(data)     
 if "review_index" not in st.session_state:
